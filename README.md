@@ -19,8 +19,10 @@ https://weatherbox.github.io/warning-area/
 |city    |二次細分           |https://weatherbox.github.io/warning-area-vt/city/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/city.html|
 
 
-[国土数値情報　行政区域データ(2016年)](http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)
-を加工したデータです。利用の際は、国土数値情報の使用許諾条件をお読みください。
+
+
+[国土数値情報　行政区域データ(2016年)](http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)を加工したデータです。  
+利用の際は、国土数値情報の使用許諾条件をお読みください。
 
 
 ## ref

@@ -18,6 +18,11 @@ https://weatherbox.github.io/warning-area/
 |division|市町村等をまとめた地域|https://weatherbox.github.io/warning-area-vt/division/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/division.html|
 |city    |二次細分           |https://weatherbox.github.io/warning-area-vt/city/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/city.html|
 
+
+[国土数値情報　行政区域データ(2016年)](http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)
+を加工したデータです。利用する際は、国土数値情報の規約をお読みください。
+
+
 ## ref
 - [気象庁 | 気象警報・注意報や天気予報の発表区域](http://www.jma.go.jp/jma/kishou/know/saibun/index.html)
 - [気象庁 | 特別警報・警報・注意報や天気予報の発表区域](http://www.jma.go.jp/jma/kishou/know/yougo_hp/shichoson_ichiran.html)

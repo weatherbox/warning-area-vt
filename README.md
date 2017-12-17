@@ -20,7 +20,7 @@ https://weatherbox.github.io/warning-area/
 
 
 [国土数値情報　行政区域データ(2016年)](http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)
-を加工したデータです。利用する際は、国土数値情報の規約をお読みください。
+を加工したデータです。利用の際は、国土数値情報の使用許諾条件をお読みください。
 
 
 ## ref

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidGF0dGlpIiwiYSI6ImNqMWFrZ3ZncjAwNmQzM3BmazRtNngxam8ifQ.DNMc6j7E4Gh7UkUAaEAPxA';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/tattii/cj3jrmgsp002i2rt50tobxo27',
+    zoom: 5,
+    center: [136.6, 35.5]
+});
+
+var popup = new mapboxgl.Popup({
+	closeButton: false
+});
+
+map.on("load", function() {
+	map.addSource("vtile", {
+		"type": "vector",
+		"minzoom": 0,
+		"maxzoom": 8,
+		"tiles": ["https://weatherbox.github.io/warning-area-vt/region/{z}/{x}/{y}.pbf"],
+		"attribution": '<a href="https://www.data.jma.go.jp/developer/gis.html" target="_blank">気象庁GISデータ</a>'
+	});
+
+	map.addLayer({
+		"id": "warning-area",
+		"type": "fill",
+		"source": "vtile",
+		"source-layer": "region",
+		"paint": {
+			"fill-color": "rgba(126, 199, 216, 0.4)",
+			"fill-outline-color": "rgba(0, 84, 153, 0.7)"
+		}
+	});
+
+	map.addLayer({
+		"id": "selected-area",
+		"type": "fill",
+		"source": "vtile",
+		"source-layer": "region",
+		"paint": {
+			"fill-color": "rgba(245, 143, 152, 0.4)",
+			"fill-outline-color": "rgba(245, 143, 152, 0.7)"
+		},
+		"filter": ["==", "code", ""]
+	});
+
+	map.on('click', 'warning-area', select);
+	map.on('touchend', 'warning-area', select);
+
+	function select (e) {
+		map.getCanvas().style.cursor = 'pointer';
+		console.log(e);
+
+		var code = e.features[0].properties.code;
+		map.setFilter("selected-area", ["==", "code", code]);
+	}
+
+	map.on('mousemove', function(e) {
+		var features = map.queryRenderedFeatures(e.point, { layers: ['warning-area'] });
+		map.getCanvas().style.cursor = (features.length) ? 'crosshair' : '';
+
+		if (!features.length) {
+			popup.remove();
+			return;
+		}
+
+		var feature = features[0];
+
+		popup.setLngLat(e.lngLat)
+			.setText(feature.properties.name)
+			.addTo(map);
+	});
+});
+
+
+</script>
+
+</body>
+</html>
+

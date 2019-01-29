@@ -1,0 +1,12 @@
+{
+    "name": ".",
+    "description": ".",
+    "version": "2",
+    "minzoom": "0",
+    "maxzoom": "8",
+    "center": "130.078125,32.544857,8",
+    "bounds": "122.933653,20.422746,153.986844,45.557243",
+    "type": "overlay",
+    "format": "pbf",
+    "json": "{\"vector_layers\": [ { \"id\": \"region\", \"description\": \"\", \"minzoom\": 0, \"maxzoom\": 8, \"fields\": {\"code\": \"String\", \"name\": \"String\"} } ],\"tilestats\": {\"layerCount\": 1,\"layers\": [{\"layer\": \"region\",\"count\": 67,\"geometry\": \"Polygon\",\"attributeCount\": 2,\"attributes\": [{\"attribute\": \"code\",\"count\": 11,\"type\": \"string\",\"values\": [\"010100\",\"010200\",\"010300\",\"010400\",\"010500\",\"010600\",\"010700\",\"010800\",\"010900\",\"011000\",\"011100\"]},{\"attribute\": \"name\",\"count\": 11,\"type\": \"string\",\"values\": [\"中国地方\",\"九州北部地方（山口県を含む）\",\"九州南部・奄美地方\",\"北海道地方\",\"北陸地方\",\"四国地方\",\"東北地方\",\"東海地方\",\"沖縄地方\",\"近畿地方\",\"関東甲信地方\"]}]}]}}"
+}

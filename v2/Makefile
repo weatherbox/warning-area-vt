@@ -33,4 +33,7 @@ mbtiles:
 		pref.geojson
 
 vt:
-	tile-join -e . city.mbtiles division.mbtiles distlict.mbtiles pref.mbtiles
+	tile-join \
+		-e . -f \
+		--no-tile-compression \
+		city.mbtiles division.mbtiles distlict.mbtiles pref.mbtiles

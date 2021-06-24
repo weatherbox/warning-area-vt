@@ -1,28 +1,26 @@
 # warning-area-vt
-気象庁 細分区域 バイナリベクトルタイル
-
-## generate vector tiles
-https://github.com/weatherbox/warning-area
-```
-tippecanoe -e city -z 10 --no-tile-compression ../warning-area/geojson/city-all.geojson
-```
+気象庁 細分区域 ベクトルタイル
 
 ## demo
 https://weatherbox.github.io/warning-area/
 
 ## data
-|        |区域               |url|example|
-|:-------|:-----------------|:--|:--|
-|pref    |府県予報区          |https://weatherbox.github.io/warning-area-vt/pref/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/pref.html|
-|distlict|一次細分           |https://weatherbox.github.io/warning-area-vt/distlict/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/distlict.html|
-|division|市町村等をまとめた地域|https://weatherbox.github.io/warning-area-vt/division/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/division.html|
-|city    |二次細分           |https://weatherbox.github.io/warning-area-vt/city/{z}/{x}/{y}.pbf|https://weatherbox.github.io/warning-area-vt/examples/city.html|
+- url `https://weatherbox.github.io/warning-area-vt/pref/{z}/{x}/{y}.pbf`
+- example https://weatherbox.github.io/warning-area-vt/v2/example.html
 
+|layer   |区域                |Property|
+|:-------|:-------------------|:-------|
+|pref    |府県予報区          |code,name|
+|distlict|一次細分            |code,name|
+|division|市町村等をまとめた地域|code,name|
+|city    |二次細分           |code,name|
 
+### 出典
+気象庁 予報区等GISデータ「市町村等（気象警報等） 」、「市町村等をまとめた地域等」、「一次細分区域等」、「府県予報区等 」を加工して作成
+http://www.data.jma.go.jp/developer/gis.html
 
-
-[国土数値情報　行政区域データ(2016年)](http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)を加工したデータです。  
-利用の際は、国土数値情報の使用許諾条件をお読みください。
+### 更新履歴
+- 2020年5月29日　栃木県日光市の予報区分割
 
 
 ## ref

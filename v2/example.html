@@ -27,11 +27,13 @@ var popup = new mapboxgl.Popup({
 	closeButton: false
 });
 
+var layer = 'city';
+
 map.on("load", function() {
 	map.addSource("vt", {
 		"type": "vector",
 		"minzoom": 0,
-		"maxzoom": 8,
+		"maxzoom": 10,
 		"tiles": ["https://weatherbox.github.io/warning-area-vt/v2/{z}/{x}/{y}.pbf"],
 		"attribution": '<a href="https://www.data.jma.go.jp/developer/gis.html" target="_blank">気象庁GISデータ</a>'
 	});
@@ -40,7 +42,7 @@ map.on("load", function() {
 		"id": "warning-area",
 		"type": "fill",
 		"source": "vt",
-		"source-layer": "city",
+		"source-layer": layer,
 		"paint": {
 			"fill-color": "rgba(126, 199, 216, 0.4)",
 			"fill-outline-color": "rgba(0, 84, 153, 0.7)"
@@ -51,7 +53,7 @@ map.on("load", function() {
 		"id": "selected-area",
 		"type": "fill",
 		"source": "vt",
-		"source-layer": "city",
+		"source-layer": layer,
 		"paint": {
 			"fill-color": "rgba(245, 143, 152, 0.4)",
 			"fill-outline-color": "rgba(245, 143, 152, 0.7)"

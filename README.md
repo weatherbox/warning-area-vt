@@ -5,7 +5,7 @@
 https://weatherbox.github.io/warning-area/
 
 ## data
-- url `https://weatherbox.github.io/warning-area-vt/pref/{z}/{x}/{y}.pbf`
+- url `https://weatherbox.github.io/warning-area-vt/v2/{z}/{x}/{y}.pbf`
 - example https://weatherbox.github.io/warning-area-vt/v2/example.html
 
 |layer   |区域                |Property|

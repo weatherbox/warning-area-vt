@@ -20,6 +20,7 @@ https://weatherbox.github.io/warning-area/
 http://www.data.jma.go.jp/developer/gis.html
 
 ### 更新履歴
+- 2022年3月24日　広島県広島市の予報区分割
 - 2020年5月29日　栃木県日光市の予報区分割
 
 
